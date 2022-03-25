@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto+Condensed:wght@300;400&display=swap" rel="stylesheet">  
+    <title>Student Web</title>
+    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="courses.css">
+</head>
+<body>
+    <div class="menu">
+        <div>
+            <div class="title"><a href="index.html">Student Web</a></div>
+            <div class="links">
+                <div><a href="courses.html">Courses</a></div>
+                <div><a href="students.html">Students</a></div>
+            </div>
+        </div>
+    </div>
+    <div class="main">
+        <div class="header">
+            <h1>Courses</h1>
+            <form>
+                <label>I'm looking for the course:</label>
+                <input type="text"><br><br>
+            </form>
+        </div>
+        <div class="courses">
+            <div class="course">
+                <h2>Biology (15 credits)</h2>
+                <h3>Course responsible:</h3>
+                <div class="courseresponsible">
+                    <p>Adam (Professor)</p>
+                </div>
+                <h3>Teachers:</h3>
+                <div class="courseteacher">
+                    <p>Adam (Professor) </p>
+                </div>
+                <h3>Course responsible:</h3>
+                <div class="coursestudent">
+                    <p>Olive (180 credits)</p>
+                    <p>Autumn 2019 (15 of 15 credits)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="database.js"></script>
+    <script src="courses.js"></script>
+</body>
+</html>
