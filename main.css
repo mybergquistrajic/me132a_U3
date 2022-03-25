@@ -1,0 +1,97 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    display: flex;
+}
+
+/* ––––– MENU ––––– */
+.menu {
+    width: 15vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    font-family: helvetica;
+    box-shadow: 0px 12px 8px 1px rgba(0, 0, 0, 0.349);
+    background-color: black;
+    color: white;
+    
+}
+
+.menu > div {
+    height: 10vh;
+    margin-top: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: sticky;
+    top: 0;
+}
+
+.title {
+    margin-bottom: 2vh;
+    font-family: 'Bebas Neue', serif;
+    font-size: 2.5rem;
+    border-bottom: 2px solid white;
+}
+
+.title:hover {
+    color: rgb(75, 95, 59);
+}
+
+.links {
+    font-family: 'Bebas Neue', serif;
+    font-size: 1.5em;
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: rgb(75, 95, 59);
+}
+
+/* ––––– MAIN ––––– */
+
+.main {
+    width: 85vw;
+    margin-left: 15vw;
+}
+
+.landing-page {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-page > h1 {
+    margin: 0px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 7em;
+    border-bottom: 2px solid black;
+    color: rgb(75, 95, 59);
+}
+
+.landing-page p:nth-child(2){
+    margin-bottom: 0;
+    margin-top: 20px;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 2.5em;
+}
+
+.landing-page p:nth-child(3){
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 1.5em;
+    font-weight: lighter;
+}
+
