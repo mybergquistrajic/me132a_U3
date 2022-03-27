@@ -2,6 +2,12 @@
 
 let studentResults = document.querySelector(".students");
 
+// Function that gets the value from the input field
+function getInputValue() {
+    let input = document.getElementById('studentinput').value.toLowerCase();
+    return input;
+}
+
 // Filters students by last name
 function filterStudentsByLastName() {
     studentResults.innerHTML = "";
@@ -25,7 +31,7 @@ function createStudent(student, i) {
     // Gives the student item an ID based on the student objects ID
     studentItem.id = `${student[i].studentID}`
     studentItem.innerHTML = `
-    <h2>${student[i].firstName} ${student[i].lastName} (total of ${credits(student, i)} credits)</h2>
+    <h2>${student[i].firstName} ${student[i].lastName} (Total of ${credits(student, i)} credits)</h2>
     <h3>Courses:</h3>
     `
     studentResults.appendChild(studentItem);
@@ -43,12 +49,6 @@ function credits(student, i) {
     let initialValue = 0;
     let creditsSum = credits.reduce((previousValue, currentValue) => previousValue + currentValue, initialValue);
     return creditsSum;
-}
-
-// Function that gets the value from the input field
-function getInputValue() {
-    let input = document.getElementById('studentinput').value.toLowerCase();
-    return input;
 }
 
 // Creates all courses for a student
@@ -75,4 +75,3 @@ function createCourses(student, i) {
         document.getElementById(`${student[i].studentID}`).appendChild(course);
     }
 }
-
