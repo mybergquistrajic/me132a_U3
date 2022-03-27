@@ -26,20 +26,10 @@
             <h1>Students</h1>
             <form>
                 <label>I'm looking for the student:</label>
-                <input id ="studentinput" type="text"><br><br>
+                <input id ="studentinput" type="text" oninput="filterStudentsByLastName()"><br><br>
             </form>
         </div>
         <div class="students">
-            <div class="student">
-                <h2>Olive (total 180 credits)</h2>
-                <h3>Courses:</h3>
-                    <div>
-                        <div>
-                            <p>Biology</p>
-                            <p>Autumn 2019 (15 of 15 credits)</p>
-                        </div>
-                    </div>
-            </div>
         </div>
     </div>
     <script src="database.js"></script>
