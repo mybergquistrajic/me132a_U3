@@ -28,7 +28,7 @@ function createCourse(course, i) {
     courseResults.appendChild(courseItem);
     courseResponsible(course, i)
     courseTeachers(course, i)
-    // courseStudents(course, i)
+    courseStudents(course, i)
 }
 
 
@@ -58,7 +58,26 @@ function courseTeachers(course, i) {
         teacher.appendChild(teacherInfo);
         document.getElementById(`${course[i].courseId}-teachers`).appendChild(teacher);
     }
+}
 
+function courseStudents(course, i) {
+    for (let student of DATABASE.students) {
+        for (let studentCourse of student.courses) {
+            if (course[i].courseId == studentCourse.courseId) {
+                let studentItem = document.createElement("div");
+                studentItem.classList.add("coursestudent");
+                let studentInfo = document.createElement("p");
+                studentInfo.innerHTML = `
+                ${student.firstName} ${student.lastName} (${studentCourse.passedCredits} credits) <br>
+                ${studentCourse.started.semester} ${studentCourse.started.year}`
+                if (studentCourse.passedCredits == course[i].totalCredits) {
+                    studentItem.style.backgroundColor = "darkgray";
+                }
+                studentItem.appendChild(studentInfo);
+                document.getElementById(`${course[i].courseId}-students`).appendChild(studentItem);
+            }
+        }
+    }
 }
 
 // Function that gets the value from the input field
