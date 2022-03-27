@@ -22,9 +22,9 @@ function createCourse(course, i) {
     courseItem.id = `${course[i].courseId}`
     courseItem.innerHTML = `
     <h2>${course[i].title} (${course[i].totalCredits} credits)</h2>
-    <div id="${course[i].courseId}-responsible">Course responsible:</div>
-    <div id="${course[i].courseId}-teachers">Course responsible:</div>
-    <div id="${course[i].courseId}-students">Students:</div>`
+    <div id="${course[i].courseId}-responsible">Course responsible: <br></div>
+    <div id="${course[i].courseId}-teachers">Course responsible: <br></div>
+    <div id="${course[i].courseId}-students">Students: <br></div>`
     courseResults.appendChild(courseItem);
     courseResponsible(course, i)
     courseTeachers(course, i)
