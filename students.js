@@ -20,19 +20,13 @@ function createStudents(student) {
 function createStudent(student, i) {
     let studentItem = document.createElement("div");
     studentItem.classList.add("student");
-    // let courses = createStudentCourse(student);
+    studentItem.id = `${student[i].studentID}`
     studentItem.innerHTML = `
     <h2>${student[i].firstName} ${student[i].lastName} (total of ${credits(student, i)} credits)</h2>
     <h3>Courses:</h3>
-        <div>
-            <div>
-                <p>Biology</p>
-                <p>Autumn 2019 (15 of 15 credits)</p>
-            </div>
-        </div>
-    </div>
     `
     studentResults.appendChild(studentItem);
+    createCourses(student, i);
 }
 
 function credits(student, i) {
@@ -48,6 +42,25 @@ function credits(student, i) {
 function getInputValue() {
     let input = document.getElementById('studentinput').value.toLowerCase();
     return input;
+}
+
+function createCourses(student, i) {
+    for (let studentCourse of student[i].courses) {
+        let course = document.createElement("div");
+        let courseName = document.createElement("p");
+        for (let databaseCourse of DATABASE.courses) {
+            if (studentCourse.courseId == databaseCourse.courseId) {
+                courseName.innerHTML = `
+                ${databaseCourse.title}  <br>
+                ${studentCourse.started.semester} ${studentCourse.started.year} (${studentCourse.passedCredits} credits of ${databaseCourse.totalCredits})`;
+                if (studentCourse.passedCredits == databaseCourse.totalCredits) {
+                    course.style.backgroundColor = "darkgray";
+                }
+            }
+        }
+        course.appendChild(courseName);
+        document.getElementById(`${student[i].studentID}`).appendChild(course);
+    }
 }
 
 filterStudentsByLastName()

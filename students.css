@@ -45,7 +45,7 @@ form > label {
     font-size: 1.2em;
 }
 
-.student div:nth-child(1) {
+.student div {
     margin: 2px;
     padding-left: 8px;
     padding-right: 8px;
@@ -57,6 +57,6 @@ form > label {
     background-color: white;
 }
 
-.student div div p:nth-child(2) {
+.student div p:nth-child(2) {
     font-weight: lighter;
 }
