@@ -13,6 +13,16 @@ function filterCoursesByName() {
     courseResults.innerHTML = "";
     let courses = DATABASE.courses;
     let result = courses.filter(course => course.title.toLowerCase().includes(getInputValue()));
+    // Sorts result by title
+    result.sort(function (a, b) {
+        if (a.title > b.title) {
+            return 1;
+        }
+        if (a.title < b.title) {
+            return -1;
+        }
+        return 0;
+    })
     createCourses(result);
 }
 

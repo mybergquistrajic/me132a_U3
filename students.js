@@ -13,7 +13,16 @@ function filterStudentsByLastName() {
     studentResults.innerHTML = "";
     let students = DATABASE.students;
     let result = students.filter(student => student.lastName.toLowerCase().includes(getInputValue()));
-    console.log(result);
+    // Sorts result by last name
+    result.sort(function (a, b) {
+        if (a.lastName > b.lastName) {
+            return 1;
+        }
+        if (a.lastName < b.lastName) {
+            return -1;
+        }
+        return 0;
+    })
     createStudents(result);
 }
 
